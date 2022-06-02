@@ -160,7 +160,8 @@
                 const t = getTimeRemaining(period);
                 document.getElementsByClassName("glitch")[1].dataset.text = t.minutes + ":" + t.seconds;
                 document.getElementsByClassName("glitch")[1].innerHTML = t.minutes + ":" + t.seconds;
-                if (t.total <= 0) {
+                if (t.minutes <= 0 && t.seconds <= 0) {
+                    location.reload();
                     clearInterval(timeinterval);
                 }
             }
