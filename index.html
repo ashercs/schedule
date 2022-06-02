@@ -101,11 +101,11 @@
                     currentperiod = 3
                     thing1 = 11
                     thing2 = 04
-                } else if (hour == 11 && minute >= 4 || hour == 11 && minute <= 50) {
+                } else if (hour == 11 && minute >= 4 && minute <= 51) {
                     currentperiod = 4
                     thing1 = 11
-                    thing2 = 51
-                } else if (hour == 11 && minute >= 51 || hour == 12 && minute <= 38) {
+                    thing2 = 52
+                } else if (hour == 11 && minute >= 52 || hour == 12 && minute <= 38) {
                     currentperiod = 5
                     thing1 = 12
                     thing2 = 39
@@ -158,8 +158,14 @@
                 [0][checkperiod()[0]])
             function updateClock() {
                 const t = getTimeRemaining(period);
+                if (t.seconds < 10){
+                    document.getElementsByClassName("glitch")[1].dataset.text = t.minutes + ":" + "0" + t.seconds;
+                    document.getElementsByClassName("glitch")[1].innerHTML = t.minutes + ":" + "0" + t.seconds;
+                }
+                else if (t.seconds >= 10){
                 document.getElementsByClassName("glitch")[1].dataset.text = t.minutes + ":" + t.seconds;
                 document.getElementsByClassName("glitch")[1].innerHTML = t.minutes + ":" + t.seconds;
+                }
                 if (t.minutes <= 0 && t.seconds <= 0) {
                     location.reload();
                     clearInterval(timeinterval);
