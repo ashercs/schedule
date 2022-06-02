@@ -119,8 +119,8 @@
                     thing2 = 15
                 } else if (hour == 14 && minute >= 15 || hour == 15 && minute <= 2) {
                     currentperiod = 8
-                    thing1 = 0
-                    thing2 = 0
+                    thing1 = 15
+                    thing2 = 2
                 } else {
                     currentperiod = 0
                     thing1 = 0
@@ -166,7 +166,7 @@
                 document.getElementsByClassName("glitch")[1].dataset.text = t.minutes + ":" + t.seconds;
                 document.getElementsByClassName("glitch")[1].innerHTML = t.minutes + ":" + t.seconds;
                 }
-                if (t.minutes == 0 && t.seconds == 0) {
+                if (t.minutes <= 0 && t.seconds <= 0) {
                     location.reload();
                     clearInterval(timeinterval);
                 }
