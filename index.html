@@ -255,12 +255,19 @@
             }
         if (checkperiod()[3] == true){
             const period = new Date(`${month} ${daynum}, ${year} ${checkperiod()[1]}:${checkperiod()[2]}:00`)
-            console.log(period)
-            console.log(`${month} ${daynum}, ${year} ${checkperiod()[1]}:${checkperiod()[2]}:00`)
-            console.log(getTimeRemaining(period))
+            // console.log(period)
+            // console.log(`${month} ${daynum}, ${year} ${checkperiod()[1]}:${checkperiod()[2]}:00`)
+            // console.log(getTimeRemaining(period))
             let ok = getTimeRemaining(period).minutes
-            console.log(ok)
-            console.log(ok.toString().replace("-", ""))
+            // Notification.requestPermission((status) => {
+            //     console.log(status)
+            // if (status == "granted") {
+            //     console.log('h')
+            //     if (ok < 5){
+            //     const notification = new Notification('Asher Schedule Reminder', { body: "5 Minutes until next period!" });
+            // }}})
+            // console.log(ok)
+            // console.log(ok.toString().replace("-", ""))
             var styleElem = document.getElementsByClassName("glitch")[0];
             styleElem.innerHTML = jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0]]
             document.body.innerHTML = document.body.innerHTML.replace('No', jsonData['schedule'][0][day.toLowerCase()]
