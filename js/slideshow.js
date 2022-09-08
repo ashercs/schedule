@@ -56,7 +56,7 @@ const d = new Date();
 let day = days[d.getDay()];
 console.log(jsonData['schedule'][0][day.toLowerCase()][0]['1'])
 $(document).ready(function () {
-  if (day !== "Monday" && day !== "Thursday") {
+  if (day !== "Monday" && day !== "Thursday" && day !== "Friday") {
     var links = [
 
       {
@@ -168,6 +168,25 @@ $(document).ready(function () {
       },
       {
         name: jsonData['schedule'][0][day.toLowerCase()][0]['10']
+      },
+    ]
+  }
+  else if (day == "Friday") {
+    var links = [
+      {
+        name: jsonData['schedule'][0][day.toLowerCase()][0]['1']
+      },
+
+      {
+        name: jsonData['schedule'][0][day.toLowerCase()][0]['2']
+      },
+
+      {
+        name: jsonData['schedule'][0][day.toLowerCase()][0]['3']
+      },
+
+      {
+        name: jsonData['schedule'][0][day.toLowerCase()][0]['4']
       },
     ]
   }
