@@ -253,12 +253,34 @@
                     seconds
                 };
             }
+            // && checkperiod()[3] == false
+        if (day !== "Sunday" && day !== "Saturday" && hour <= 8 && minute < 45) {
+            const firstperiod = new Date(`${month} ${daynum}, ${year}, 8:45:00`)
+            var styleElem = document.getElementsByClassName("glitch")[0];
+            styleElem.innerHTML = jsonData['schedule'][0][day.toLowerCase()][0]['1']
+            document.body.innerHTML = document.body.innerHTML.replace('No', jsonData['schedule'][0][day.toLowerCase()][0]['1'])
+            function updateClock() {
+                const t = getTimeRemaining(firstperiod);
+                if (t.seconds < 10){
+                    document.getElementsByClassName("glitch")[1].dataset.text = t.minutes + ":" + "0" + t.seconds;
+                    document.getElementsByClassName("glitch")[1].innerHTML = t.minutes + ":" + "0" + t.seconds;
+                }
+                else if (t.seconds >= 10){
+                document.getElementsByClassName("glitch")[1].dataset.text = t.minutes + ":" + t.seconds;
+                document.getElementsByClassName("glitch")[1].innerHTML = t.minutes + ":" + t.seconds;
+                }
+                if (t.minutes <= 0 && t.seconds <= 0) {
+                    location.reload();
+                    clearInterval(timeinterval);
+                }
+            }
+        }
         if (checkperiod()[3] == true){
             const period = new Date(`${month} ${daynum}, ${year} ${checkperiod()[1]}:${checkperiod()[2]}:00`)
             // console.log(period)
             // console.log(`${month} ${daynum}, ${year} ${checkperiod()[1]}:${checkperiod()[2]}:00`)
             // console.log(getTimeRemaining(period))
-            let ok = getTimeRemaining(period).minutes
+            // let ok = getTimeRemaining(period).minutes
             // Notification.requestPermission((status) => {
             //     console.log(status)
             // if (status == "granted") {
