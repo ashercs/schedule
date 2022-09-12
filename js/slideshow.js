@@ -6,15 +6,15 @@ const jsonData = {
       "3": "Programming (527)",
       "4": "Post-secondary Planning (605)",
       "5": "Lunch",
-      "6": "global II (613)",
+      "6": "Global II (613)",
       "7": "Biology (Lab 2)",
       "8": "Programming (527)",
-      "9": "global II (613)"
+      "9": "Global II (613)"
     }],
     "tuesday": [{
       "1": "Homeroom (613)",
       "2": "Algebra II (607)",
-      "3": "global II (613)",
+      "3": "Global II (613)",
       "4": "World Literature (621)",
       "5": "Lunch",
       "6": "Art Independent Study (618)",
@@ -24,7 +24,7 @@ const jsonData = {
     "wednesday": [{
       "1": "Homeroom (613)",
       "2": "Algebra II (607)",
-      "3": "global II (613)",
+      "3": "Global II (613)",
       "4": "World Literature (621)",
       "5": "Lunch",
       "6": "Art Independent Study (618)",
