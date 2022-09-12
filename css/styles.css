@@ -37,7 +37,7 @@ h2 {
 .glitch {
   position: relative;
   color: white;
-  font-size: 4em;
+  font-size: 4vw;
   letter-spacing: 0.5em;
   animation: glitch-skew 1s infinite linear alternate-reverse;
 }
