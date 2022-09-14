@@ -34,6 +34,36 @@ h2 {
   color: #00ffff;
   letter-spacing: 1em;
 }
+.glitch2 {
+  position: relative;
+  color: white;
+  font-size: 2em;
+  letter-spacing: 0.5em;
+  animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+.glitch2::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  left: 2px;
+  text-shadow: -2px 0 #ff00cc;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+.glitch2::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  left: -2px;
+  text-shadow: -2px 0 #00c8ff, 2px 2px #ff00cc;
+  animation: glitch-anim2 1s infinite linear alternate-reverse;
+}
 .glitch {
   position: relative;
   color: white;
