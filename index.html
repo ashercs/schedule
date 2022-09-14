@@ -8,6 +8,7 @@
     <div id="wrapper">
         <h1 class="glitch" data-text="No">No</h1>
         <h2 class="glitch" data-text="School">School</h2>
+        <h2 class="glitch2" data-text="None">None </h2>
     </div>
 </div>
 <div class="marquee-container">
@@ -254,27 +255,27 @@
                 };
             }
             // && checkperiod()[3] == false
-        if (day !== "Sunday" && day !== "Saturday" && hour <= 8 && minute < 45) {
-            const firstperiod = new Date(`${month} ${daynum}, ${year}, 8:45:00`)
-            var styleElem = document.getElementsByClassName("glitch")[0];
-            styleElem.innerHTML = jsonData['schedule'][0][day.toLowerCase()][0]['1']
-            document.body.innerHTML = document.body.innerHTML.replace('No', jsonData['schedule'][0][day.toLowerCase()][0]['1'])
-            function updateClock() {
-                const t = getTimeRemaining(firstperiod);
-                if (t.seconds < 10){
-                    document.getElementsByClassName("glitch")[1].dataset.text = t.minutes + ":" + "0" + t.seconds;
-                    document.getElementsByClassName("glitch")[1].innerHTML = t.minutes + ":" + "0" + t.seconds;
-                }
-                else if (t.seconds >= 10){
-                document.getElementsByClassName("glitch")[1].dataset.text = t.minutes + ":" + t.seconds;
-                document.getElementsByClassName("glitch")[1].innerHTML = t.minutes + ":" + t.seconds;
-                }
-                if (t.minutes <= 0 && t.seconds <= 0) {
-                    location.reload();
-                    clearInterval(timeinterval);
-                }
-            }
-        }
+        // if (day !== "Sunday" && day !== "Saturday" && hour < 8 && minute < 45) {
+        //     const firstperiod = new Date(`${month} ${daynum}, ${year} 8:45:00`)
+        //     var styleElem = document.getElementsByClassName("glitch")[0];
+        //     styleElem.innerHTML = jsonData['schedule'][0][day.toLowerCase()][0]['1']
+        //     document.body.innerHTML = document.body.innerHTML.replace('No', "School Starts In")
+        //     function updateClock() {
+        //         const t = getTimeRemaining(firstperiod);
+        //         if (t.seconds < 10){
+        //             document.getElementsByClassName("glitch")[1].dataset.text = t.minutes + ":" + "0" + t.seconds;
+        //             document.getElementsByClassName("glitch")[1].innerHTML = t.minutes + ":" + "0" + t.seconds;
+        //         }
+        //         else if (t.seconds >= 10){
+        //         document.getElementsByClassName("glitch")[1].dataset.text = t.minutes + ":" + t.seconds;
+        //         document.getElementsByClassName("glitch")[1].innerHTML = t.minutes + ":" + t.seconds;
+        //         }
+        //         if (t.minutes <= 0 && t.seconds <= 0) {
+        //             location.reload();
+        //             clearInterval(timeinterval);
+        //         }
+        //     }
+        // }
         if (checkperiod()[3] == true){
             const period = new Date(`${month} ${daynum}, ${year} ${checkperiod()[1]}:${checkperiod()[2]}:00`)
             // console.log(period)
@@ -291,9 +292,13 @@
             // console.log(ok)
             // console.log(ok.toString().replace("-", ""))
             var styleElem = document.getElementsByClassName("glitch")[0];
+            var styleElem2 = document.getElementsByClassName("glitch2")[0];
+            styleElem2.innerHTML = jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0] + 1]
             styleElem.innerHTML = jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0]]
             document.body.innerHTML = document.body.innerHTML.replace('No', jsonData['schedule'][0][day.toLowerCase()]
                 [0][checkperiod()[0]])
+            document.body.innerHTML = document.body.innerHTML.replace('None', jsonData['schedule'][0][day.toLowerCase()]
+            [0][checkperiod()[0] + 1])
             function updateClock() {
                 const t = getTimeRemaining(period);
                 if (t.seconds < 10){
