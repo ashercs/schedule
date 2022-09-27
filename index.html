@@ -21,45 +21,47 @@
                 "monday": [{
                     "1": "Homeroom-613",
                     "2": "Algebra-607",
-                    "3": "Coding-527",
+                    "3": "Art-618",
                     "4": "PSP-605",
                     "5": "Lunch",
-                    "6": "Global-613",
-                    "7": "Biology",
-                    "8": "Coding-602",
-                    "9": "Global-613"
+                    "6": "Coding-527",
+                    "7": "Chemistry",
+                    "8": "Global-613",
+                    // "9": "Global-613"
                 }],
                 "tuesday": [{
                     "1": "Homeroom-613",
                     "2": "Algebra-607",
-                    "3": "Global-613",
+                    "3": "Chemistry",
                     "4": "World Lit-621",
                     "5": "Lunch",
-                    "6": "Art Study-618",
-                    "7": "Movement-630",
-                    "8": "Biology"
+                    "6": "Global-613", //half
+                    "7": "Chemistry", //half
+                    "8": "Global-613",
+                    "9": "Movement-630", //half
+                    "10": "ELA" //half
                 }],
                 "wednesday": [{
                     "1": "Homeroom-613",
                     "2": "Algebra-607",
-                    "3": "Global-613",
+                    "3": "Chemistry",
                     "4": "World Lit-621",
                     "5": "Lunch",
-                    "6": "Art Study-618",
+                    "6": "Coding-527",
                     "7": "Spanish-627",
-                    "8": "Biology"
+                    "8": "Art-618"
                 }],
                 "thursday": [{
                     "1": "Homeroom-613",
                     "2": "Spanish-627",
-                    "3": "ELA",
-                    "4": "Counseling-602",
-                    "5": "Coding-527",
-                    "6": "Lunch",
-                    "7": "Student Life",
-                    "8": "Biology",
-                    "9" : "Algebra II-607",
-                    "10" : "Advisory-613"
+                    "3": "Coding-527",
+                    "4": "Global-613",
+                    "5": "Lunch",
+                    "6": "Student Life-611",
+                    "7": "Movement-630", //half
+                    "8": "Counseling-602", //half
+                    "9": "Algebra-607", //half
+                    "10": "Advisory-613" //half
                 }],
                 "friday": [{
                     "1": "Homeroom-613",
@@ -85,7 +87,7 @@
         }
         if (day !== "Sunday" && day !== "Saturday") {
             function checkperiod() {
-            if (day !== "Monday" && day !== "Thursday"){
+            if (day !== "Tuesday" && day !== "Thursday"){
                 currentperiod = 0
                 school = true
                 thing1 = 0
@@ -131,7 +133,7 @@
                 if (day == "Friday" && currentperiod >= 5) {
                     school = false
                 }}
-            else if (day == "Monday"){
+            else if (day == "Tuesday"){
                 currentperiod = 0
                 school = true
                 thing1 = 0
@@ -168,8 +170,12 @@
                     currentperiod = 8
                     thing1 = 15
                     thing2 = 31
-                } else if (hour == 14 && minute >= 31 || hour == 15 && minute <= 30) {
+                } else if (hour == 14 && minute >= 31 || hour == 15 && minute <= 0) {
                     currentperiod = 9
+                    thing1 = 15
+                    thing2 = 31
+                } else if (hour == 15 && minute >= 0 && minute <= 30) {
+                    currentperiod = 10
                     thing1 = 15
                     thing2 = 31
                 } else {
@@ -195,36 +201,36 @@
                     currentperiod = 2
                     thing1 = 10
                     thing2 = 1
-                } else if (hour == 10 && minute >= 1 && hour == 10 && minute <= 30) {
+                } else if (hour == 10 && minute >= 1 || hour == 11 && minute <= 0) {
                     currentperiod = 3
-                    thing1 = 10
-                    thing2 = 31
-                } else if (hour == 10 && minute >= 31 || hour == 11 && minute <= 0) {
-                    currentperiod = 4
                     thing1 = 11
                     thing2 = 1
                 } else if (hour == 11 && minute >= 1 || hour == 12 && minute <= 0) {
-                    currentperiod = 5
+                    currentperiod = 4
                     thing1 = 12
                     thing2 = 1
                 } else if (hour == 12 && minute >= 1 && hour == 12 && minute <= 30) {
-                    currentperiod = 6
+                    currentperiod = 5
                     thing1 = 12
                     thing2 = 31
                 } else if (hour == 12 && minute >= 31 || hour == 13 && minute <= 30) {
-                    currentperiod = 7
+                    currentperiod = 6
                     thing1 = 13
                     thing2 = 31
-                } else if (hour == 13 && minute >= 31 || hour == 14 && minute <= 30) {
+                } else if (hour == 13 && minute >= 31 || hour == 14 && minute <= 0) {
+                    currentperiod = 7
+                    thing1 = 14
+                    thing2 = 1
+                } else if (hour == 14 && minute >= 0 && minute <= 30) {
                     currentperiod = 8
                     thing1 = 14
                     thing2 = 31
-                } else if (hour == 14 && minute >= 31 || hour == 15 && minute <= 0) {
+                } else if (hour == 14 && minute >= 30 || hour == 15 && minute <= 0) {
                     currentperiod = 9
-                    thing1 = 1
+                    thing1 = 15
                     thing2 = 1
-                } else if (hour == 15 && minute >= 1 && hour == 15 && minute <= 30) {
-                    currentperiod = 9
+                } else if (hour == 15 && minute >= 0 && minute <= 30) {
+                    currentperiod = 10
                     thing1 = 15
                     thing2 = 31
                 } else {
