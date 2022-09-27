@@ -2,50 +2,52 @@ const jsonData = {
   "schedule": [{
     "monday": [{
       "1": "Homeroom (613)",
-      "2": "Algebra II (607)",
-      "3": "Programming (527)",
+      "2": "Algebra (607)",
+      "3": "Art (618)",
       "4": "Post-secondary Planning (605)",
       "5": "Lunch",
-      "6": "Global II (613)",
-      "7": "Biology (Lab 2)",
-      "8": "Programming (527)",
-      "9": "Global II (613)"
+      "6": "Programming (527)",
+      "7": "Chemistry (Lab 1)",
+      "8": "Global (613)",
+      // "9": "Global (613)"
     }],
     "tuesday": [{
       "1": "Homeroom (613)",
-      "2": "Algebra II (607)",
-      "3": "Global II (613)",
-      "4": "World Literature (621)",
+      "2": "Algebra (607)",
+      "3": "Chemistry (Lab 1)",
+      "4": "World Lit (621)",
       "5": "Lunch",
-      "6": "Art Independent Study (618)",
-      "7": "Movement (630)",
-      "8": "Biology (Lab 2)"
+      "6": "Global (613)",
+      "7": "Chemistry (Lab 1)",
+      "8": "Global (613)",
+      "9": "Movement (630)",
+      "10": "ELA"
     }],
     "wednesday": [{
       "1": "Homeroom (613)",
-      "2": "Algebra II (607)",
-      "3": "Global II (613)",
-      "4": "World Literature (621)",
+      "2": "Algebra (607)",
+      "3": "Chemistry (Lab 1)",
+      "4": "World Lit (621)",
       "5": "Lunch",
-      "6": "Art Independent Study (618)",
+      "6": "Programming (527)",
       "7": "Spanish (627)",
-      "8": "Biology (Lab 2)"
+      "8": "Art (618)"
     }],
     "thursday": [{
       "1": "Homeroom (613)",
       "2": "Spanish (627)",
-      "3": "ELA",
-      "4": "Counseling (602)",
-      "5": "Programming (527)",
-      "6": "Lunch",
-      "7": "Student Life",
-      "8": "Biology (Lab 2)",
-      "9": "Algebra II (607)",
+      "3": "Programming (527)",
+      "4": "Global (613)",
+      "5": "Lunch",
+      "6": "Student Life (611)",
+      "7": "Movement (630)",
+      "8": "Counseling (602)",
+      "9": "Algebra (607)",
       "10": "Advisory (613)"
     }],
     "friday": [{
       "1": "Homeroom (613)",
-      "2": "World Literature (621)",
+      "2": "World Lit (621)",
       "3": "Spanish (627)",
       "4": "Idea Lab"
     }]
