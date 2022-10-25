@@ -7,7 +7,7 @@ const jsonData = {
       "4": "Post-secondary Planning (605)",
       "5": "Lunch",
       "6": "Programming (527)",
-      "7": "Chemistry (522)",
+      "7": "Chemistry (Lab 1)",
       "8": "Global (613)",
       // "9": "Global (613)"
     }],
@@ -18,7 +18,7 @@ const jsonData = {
       "4": "World Lit (621)",
       "5": "Lunch",
       "6": "Global (613)",
-      "7": "Chemistry (Lab 1)",
+      "7": "Chemistry (522)",
       "8": "Global (613)",
       "9": "Movement (630)",
       "10": "ELA"
