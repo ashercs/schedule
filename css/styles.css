@@ -1,15 +1,15 @@
-@import url('css.css');
+@import url("css.css");
 html,
 body,
 h1 {
   padding: 0;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 h2 {
   padding: 0;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 #app {
   background: #0a0a0a;
@@ -21,8 +21,6 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(0, 0, 0, 0.9)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px),
-    url(''); */
   background-size: cover;
   background-position: center;
   z-index: 1;
