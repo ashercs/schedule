@@ -9,7 +9,6 @@ const jsonData = {
       "6": "Programming (527)",
       "7": "Chemistry (Lab 1)",
       "8": "Global (613)",
-      // "9": "Global (613)"
     }],
     "tuesday": [{
       "1": "Homeroom (613)",
@@ -93,10 +92,8 @@ $(document).ready(function () {
         name: jsonData['schedule'][0][day.toLowerCase()][0]['8']
       },
     ]
-  }
-  else if (day == "Tuesday" || day == "Thursday") {
-    var links = [
-      {
+  } else if (day == "Tuesday" || day == "Thursday") {
+    var links = [{
         name: jsonData['schedule'][0][day.toLowerCase()][0]['1']
       },
 
@@ -177,8 +174,7 @@ $(document).ready(function () {
   //   ]
   // }
   else if (day == "Friday") {
-    var links = [
-      {
+    var links = [{
         name: jsonData['schedule'][0][day.toLowerCase()][0]['1']
       },
 
