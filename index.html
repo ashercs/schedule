@@ -15,67 +15,148 @@
 </div>
 <script>
     function main() {
-        const jsonData = {
-            "schedule": [{
-                "monday": [{
-                    "1": "Homeroom-613",
-                    "2": "Algebra-607",
-                    "3": "Art-618",
-                    "4": "PSP-605",
-                    "5": "Lunch",
-                    "6": "Coding-527",
-                    "7": "Chemistry",
-                    "8": "Global-613",
-                }],
-                "tuesday": [{
-                    "1": "Homeroom-613",
-                    "2": "Algebra-607",
-                    "3": "Chemistry",
-                    "4": "World Lit-621",
-                    "5": "Lunch",
-                    "6": "Global-613", //half
-                    "7": "Chemistry 1:1", //half
-                    "8": "Global-613",
-                    "9": "Movement-630", //half
-                    "10": "ELA" //half
-                }],
-                "wednesday": [{
-                    "1": "Homeroom-613",
-                    "2": "Algebra-607",
-                    "3": "Chemistry",
-                    "4": "World Lit-621",
-                    "5": "Lunch",
-                    "6": "Coding-527",
-                    "7": "Spanish-627",
-                    "8": "Art-618"
-                }],
-                "thursday": [{
-                    "1": "Homeroom-613",
-                    "2": "Spanish-627",
-                    "3": "Coding-527",
-                    "4": "Global-613",
-                    "5": "Lunch",
-                    "6": "Student Life-611",
-                    "7": "Movement-630", //half
-                    "8": "Counseling-602", //half
-                    "9": "Algebra-607", //half
-                    "10": "Advisory-613" //half
-                }],
-                "friday": [{
-                    "1": "Homeroom-613",
-                    "2": "World Lit-621",
-                    "3": "Spanish-627",
-                    "4": "Idea Lab"
+        function weeksBetween(d1, d2) {
+            return Math.floor((d2 - d1) / (7 * 24 * 60 * 60 * 1000))
+        }
+        const d = new Date(new Date().toLocaleString("en-US", {
+            timeZone: "America/New_York"
+        }));
+        const startweek = new Date("9/3/2023")
+
+        function isOdd(num) {
+            return num % 2;
+        }
+        let oddoreven = isOdd(weeksBetween(startweek, d))
+        let jsonData;
+        if (oddoreven == 0) {
+            // A Week
+            jsonData = {
+                "schedule": [{
+                    "monday": [{
+                        "1": "Advisory-306", // 8:30
+                        "2": "Study Hall-201", // 8:43
+                        "3": "Global Studies-203", // 9:41
+                        "4": "Break", // 10:36
+                        "5": "Biology-207", // 10:46
+                        "6": "Lunch", // 11:44
+                        "7": "Spanish-302", // 12:42
+                        "8": "English-216", //1:40
+                        "9": "Clubs" // 2:38
+                        // 3:18
+                    }],
+                    "tuesday": [{
+                        "1": "Advisory-306",
+                        "2": "PE",
+                        "3": "Algebra-308",
+                        "4": "Break",
+                        "5": "Ceramics-101",
+                        "6": "Lunch",
+                        "7": "Study Hall-201",
+                        "8": "Global Studies-203",
+                        "9": "Advisory-306"
+                    }],
+                    "wednesday": [{
+                        "1": "Advisory-306",
+                        "2": "Biology-207",
+                        "3": "Co-Curriculars",
+                        "4": "Break",
+                        "5": "Spanish-302",
+                        "6": "Lunch",
+                        "7": "English-216",
+                        "8": "Race & Identity-302",
+                        "9": "Silence"
+                    }],
+                    "thursday": [{
+                        "1": "Advisory-306",
+                        "2": "Algebra-308",
+                        "3": "Ceramics-101",
+                        "4": "Break",
+                        "5": "Study Hall-201",
+                        "6": "Lunch",
+                        "7": "Global Studies-203",
+                        "8": "Biology-207",
+                        "9": "Confrencing"
+                    }],
+                    "friday": [{
+                        "1": "Advisory-306",
+                        "2": "Spanish-302",
+                        "3": "English-216",
+                        "4": "Break",
+                        "5": "Health-302",
+                        "6": "Algebra-308",
+                        "7": "Lunch",
+                        "8": "Ceramics-101",
+                        "9": "Clubs"
+                    }]
                 }]
-            }]
+            }
+        }
+        if (oddoreven == 1) {
+            // B Week
+            jsonData = {
+                "schedule": [{
+                    "monday": [{
+                        "1": "Advisory-306", // 8:30
+                        "2": "Study Hall-201", // 8:43-9:38
+                        "3": "Global Studies-203", // 9:41-10:36
+                        "4": "Break", // 10:36
+                        "5": "Biology-207", // 10:46-11:41
+                        "6": "Lunch", // 11:44-12:39
+                        "7": "Spanish-302", // 12:42-1:37
+                        "8": "English-216", //1:40-2:35
+                        "9": "Clubs" // 2:38-3:18
+                    }],
+                    "tuesday": [{
+                        "1": "Advisory-306",
+                        "2": "LS-302",
+                        "3": "Algebra-308",
+                        "4": "Break",
+                        "5": "Ceramics-101",
+                        "6": "Lunch",
+                        "7": "Study Hall-201",
+                        "8": "Global Studies-203",
+                        "9": "Advisory-306"
+                    }],
+                    "wednesday": [{
+                        "1": "Advisory-306",
+                        "2": "Biology-207",
+                        "3": "Co-Curriculars",
+                        "4": "Break",
+                        "5": "Spanish-302",
+                        "6": "Lunch",
+                        "7": "English-216",
+                        "8": "PE",
+                        "9": "Silence"
+                    }],
+                    "thursday": [{
+                        "1": "Advisory-306",
+                        "2": "Algebra-308",
+                        "3": "Ceramics-101",
+                        "4": "Break",
+                        "5": "Study Hall-201",
+                        "6": "Lunch",
+                        "7": "Global Studies-203",
+                        "8": "Biology-207",
+                        "9": "Confrencing"
+                    }],
+                    "friday": [{
+                        "1": "Advisory-306",
+                        "2": "Spanish-302",
+                        "3": "English-216",
+                        "4": "Break",
+                        "5": "PE",
+                        "6": "Algebra-308",
+                        "7": "Lunch",
+                        "8": "Ceramics-101",
+                        "9": "Clubs"
+                    }]
+                }]
+            }
         }
         const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
             "October", "November", "December"
         ];
         const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const d = new Date(new Date().toLocaleString("en-US", {
-            timeZone: "America/New_York"
-        }));
         let hour = d.getHours()
         let minute = d.getMinutes()
         let month = months[d.getMonth()];
@@ -87,162 +168,64 @@
         }
         if (day !== "Sunday" && day !== "Saturday") {
             function checkperiod() {
-                if (day !== "Tuesday" && day !== "Thursday") {
+                currentperiod = 0
+                school = true
+                pendhour = 0
+                pendminute = 0
+                betweenperiods = false
+                if (hour == 8 && minute >= 30 && minute <= 43) {
+                    currentperiod = 1
+                    pendhour = 8
+                    pendminute = 43
+                } else if (hour == 8 && minute >= 43 || hour == 9 && minute < 38) {
+                    currentperiod = 2
+                    pendhour = 9
+                    pendminute = 39
+                } else if (hour == 9 && minute >= 38 && minute < 41) {
+                    betweenperiods = true
+                    currentperiod = 3
+                    pendhour = 9
+                    pendminute = 41
+                } else if (hour == 9 && minute >= 41 || hour == 10 && minute <= 36) {
+                    currentperiod = 3
+                    pendhour = 10
+                    pendminute = 37
+                } else if (hour == 10 && minute >= 37 && hour == 10 && minute <= 46) {
+                    currentperiod = 4
+                    pendhour = 10
+                    pendminute = 47
+                } else if (hour == 10 && minute >= 47 || hour == 11 && minute < 41) {
+                    currentperiod = 5
+                    pendhour = 11
+                    pendminute = 44
+                } else if (hour == 11 && minute >= 41 && minute < 44) {
+                    betweenperiods = true
+                    currentperiod = 6
+                    pendhour = 11
+                    pendminute = 44
+                } else if (hour == 11 && minute >= 44 || hour == 12 && minute <= 39) {
+                    currentperiod = 6
+                    pendhour = 12
+                    pendminute = 40
+                } else if (hour == 12 && minute >= 40 || hour == 13 && minute <= 37) {
+                    currentperiod = 7
+                    pendhour = 13
+                    pendminute = 38
+                } else if (hour == 13 && minute >= 38 || hour == 14 && minute <= 35) {
+                    currentperiod = 8
+                    pendhour = 14
+                    pendminute = 36
+                } else if (hour == 14 && minute >= 36 || hour == 15 && minute <= 18) {
+                    currentperiod = 9
+                    pendhour = 15
+                    pendminute = 18
+                } else {
                     currentperiod = 0
-                    school = true
-                    thing1 = 0
-                    thing2 = 0
-                    if (hour == 8 && minute >= 40 || hour == 9 && minute <= 0) {
-                        currentperiod = 1
-                        thing1 = 9
-                        thing2 = 1
-                    } else if (hour == 9 && minute >= 1 || hour == 10 && minute <= 0) {
-                        currentperiod = 2
-                        thing1 = 10
-                        thing2 = 1
-                    } else if (hour == 10 && minute >= 1 || hour == 11 && minute <= 0) {
-                        currentperiod = 3
-                        thing1 = 11
-                        thing2 = 1
-                    } else if (hour == 11 && minute >= 1 || hour == 12 && minute <= 0) {
-                        currentperiod = 4
-                        thing1 = 12
-                        thing2 = 1
-                    } else if (hour == 12 && minute >= 1 && hour == 12 && minute <= 30) {
-                        currentperiod = 5
-                        thing1 = 12
-                        thing2 = 31
-                    } else if (hour == 12 && minute >= 31 || hour == 13 && minute <= 30) {
-                        currentperiod = 6
-                        thing1 = 13
-                        thing2 = 31
-                    } else if (hour == 13 && minute >= 31 || hour == 14 && minute <= 30) {
-                        currentperiod = 7
-                        thing1 = 14
-                        thing2 = 31
-                    } else if (hour == 14 && minute >= 31 || hour == 15 && minute <= 30) {
-                        currentperiod = 8
-                        thing1 = 15
-                        thing2 = 31
-                    } else {
-                        currentperiod = 0
-                        thing1 = 0
-                        thing2 = 0
-                        school = false
-                    }
-                    if (day == "Friday" && currentperiod >= 5) {
-                        school = false
-                    }
-                } else if (day == "Tuesday") {
-                    currentperiod = 0
-                    school = true
-                    thing1 = 0
-                    thing2 = 0
-                    if (hour == 8 && minute >= 40 || hour == 9 && minute <= 0) {
-                        currentperiod = 1
-                        thing1 = 9
-                        thing2 = 1
-                    } else if (hour == 9 && minute >= 1 || hour == 10 && minute <= 0) {
-                        currentperiod = 2
-                        thing1 = 10
-                        thing2 = 1
-                    } else if (hour == 10 && minute >= 1 || hour == 11 && minute <= 0) {
-                        currentperiod = 3
-                        thing1 = 11
-                        thing2 = 1
-                    } else if (hour == 11 && minute >= 1 || hour == 12 && minute <= 0) {
-                        currentperiod = 4
-                        thing1 = 12
-                        thing2 = 1
-                    } else if (hour == 12 && minute >= 1 && hour == 12 && minute <= 30) {
-                        currentperiod = 5
-                        thing1 = 12
-                        thing2 = 31
-                    } else if (hour == 12 && minute >= 31 || hour == 13 && minute <= 0) {
-                        currentperiod = 6
-                        thing1 = 13
-                        thing2 = 1
-                    } else if (hour == 13 && minute >= 1 && minute <= 30) {
-                        currentperiod = 7
-                        thing1 = 13
-                        thing2 = 31
-                    } else if (hour == 13 && minute >= 31 || hour == 14 && minute <= 30) {
-                        currentperiod = 8
-                        thing1 = 14
-                        thing2 = 31
-                    } else if (hour == 14 && minute >= 31 || hour == 15 && minute <= 0) {
-                        currentperiod = 9
-                        thing1 = 15
-                        thing2 = 1
-                    } else if (hour == 15 && minute >= 0 && minute <= 30) {
-                        currentperiod = 10
-                        thing1 = 15
-                        thing2 = 31
-                    } else {
-                        currentperiod = 0
-                        thing1 = 0
-                        thing2 = 0
-                        school = false
-                    }
-                    if (day == "Friday" && currentperiod >= 5) {
-                        school = false
-                    }
-                } else if (day == "Thursday") {
-                    currentperiod = 0
-                    school = true
-                    thing1 = 0
-                    thing2 = 0
-                    if (hour == 8 && minute >= 40 || hour == 9 && minute <= 0) {
-                        currentperiod = 1
-                        thing1 = 9
-                        thing2 = 1
-                    } else if (hour == 9 && minute >= 1 || hour == 10 && minute <= 0) {
-                        currentperiod = 2
-                        thing1 = 10
-                        thing2 = 1
-                    } else if (hour == 10 && minute >= 1 || hour == 11 && minute <= 0) {
-                        currentperiod = 3
-                        thing1 = 11
-                        thing2 = 1
-                    } else if (hour == 11 && minute >= 1 || hour == 12 && minute <= 0) {
-                        currentperiod = 4
-                        thing1 = 12
-                        thing2 = 1
-                    } else if (hour == 12 && minute >= 1 && hour == 12 && minute <= 30) {
-                        currentperiod = 5
-                        thing1 = 12
-                        thing2 = 31
-                    } else if (hour == 12 && minute >= 31 || hour == 13 && minute <= 30) {
-                        currentperiod = 6
-                        thing1 = 13
-                        thing2 = 31
-                    } else if (hour == 13 && minute >= 31 || hour == 14 && minute <= 0) {
-                        currentperiod = 7
-                        thing1 = 14
-                        thing2 = 1
-                    } else if (hour == 14 && minute >= 0 && minute <= 30) {
-                        currentperiod = 8
-                        thing1 = 14
-                        thing2 = 31
-                    } else if (hour == 14 && minute >= 30 || hour == 15 && minute <= 0) {
-                        currentperiod = 9
-                        thing1 = 15
-                        thing2 = 1
-                    } else if (hour == 15 && minute >= 0 && minute <= 30) {
-                        currentperiod = 10
-                        thing1 = 15
-                        thing2 = 31
-                    } else {
-                        currentperiod = 0
-                        thing1 = 0
-                        thing2 = 0
-                        school = false
-                    }
-                    if (day == "Friday" && currentperiod >= 5) {
-                        school = false
-                    }
+                    pendhour = 0
+                    pendminute = 0
+                    school = false
                 }
-                return [currentperiod, thing1, thing2, school]
+                return [currentperiod, pendhour, pendminute, school, betweenperiods]
             }
 
             function getTimeRemaining(endtime) {
@@ -261,19 +244,28 @@
                     seconds
                 };
             }
+
+
             if (checkperiod()[3] == true) {
                 const period = new Date(`${month} ${daynum}, ${year} ${checkperiod()[1]}:${checkperiod()[2]}:00`)
                 var styleElem = document.getElementsByClassName("glitch")[0];
                 var styleElem2 = document.getElementsByClassName("glitch2")[0];
-                styleElem2.innerHTML = jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0] + 1]
-                styleElem.innerHTML = jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0]]
-                document.body.innerHTML = document.body.innerHTML.replace('No', jsonData['schedule'][0][day
-                    .toLowerCase()]
-                    [0][checkperiod()[0]])
-                document.body.innerHTML = document.body.innerHTML.replace('None', jsonData['schedule'][0][day
-                        .toLowerCase()
-                    ]
-                    [0][checkperiod()[0] + 1])
+                if (checkperiod()[4] == false) {
+                    styleElem2.innerHTML = jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0] + 1]
+                    styleElem.innerHTML = jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0]]
+                    styleElem.text = jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0]]
+                    styleElem.setAttribute('data-text', jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0]])
+                    styleElem2.text = jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0] + 1]
+                    styleElem2.setAttribute('data-text', jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0] + 1])
+                }
+                if (checkperiod()[4] == true) {
+                    styleElem2.innerHTML = jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0]]
+                    styleElem.innerHTML = 'Transition Period'
+                    styleElem.text = 'Transition Period'
+                    styleElem.setAttribute('data-text', 'Transition Period')
+                    styleElem2.text = jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0] ]
+                    styleElem2.setAttribute('data-text', jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0]])
+                }
 
                 function updateClock() {
                     const t = getTimeRemaining(period);
@@ -285,11 +277,12 @@
                         document.getElementsByClassName("glitch")[1].innerHTML = t.minutes + ":" + t.seconds;
                     }
                     if (t.minutes <= 0 && t.seconds <= 0) {
-                        location.reload();
-                        clearInterval(timeinterval);
+                        window.top.location = window.top.location
+                        // document.location.reload(false)
                     }
                 }
 
+                // add time between periods
                 updateClock();
                 var timeinterval = setInterval(updateClock, 1000);
             }
@@ -297,3 +290,18 @@
     }
     main()
 </script>
+// 9:38-9:41
+// 11:41-11:44
+// 12:39-12:42
+// 1:37-1:40
+// 2:35-2:38
+
+// 8:30
+// 8:43-9:38
+// 9:41-10:36
+// 10:36
+// 10:46-11:41
+// 11:44-12:39
+// 12:42-1:37
+//1:40-2:35
+// 2:38-3:18
