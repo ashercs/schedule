@@ -173,53 +173,100 @@
                 pendhour = 0
                 pendminute = 0
                 betweenperiods = false
-                if (hour == 8 && minute >= 30 && minute <= 43) {
+
+                // Period 1
+                if (hour == 8 && minute >= 30 && minute <= 40) {
+                    currentperiod = 1
+                    pendhour = 8
+                    pendminute = 40
+                } else if (hour == 8 && minute >= 40 && minute < 43) {
+                    betweenperiods = true
                     currentperiod = 1
                     pendhour = 8
                     pendminute = 43
-                } else if (hour == 8 && minute >= 43 || hour == 9 && minute < 38) {
+                } 
+                // Period 2
+                else if (hour == 8 && minute > 43 || hour == 9 && minute < 38) {
                     currentperiod = 2
                     pendhour = 9
-                    pendminute = 39
-                } else if (hour == 9 && minute >= 38 && minute < 41) {
-                    betweenperiods = true
-                    currentperiod = 3
+                    pendminute = 38
+                } else if (hour == 9 && minute > 38 && minute < 41) {
+                    betweenperiods = true 
+                    currentperiod = 2
                     pendhour = 9
                     pendminute = 41
-                } else if (hour == 9 && minute >= 41 || hour == 10 && minute <= 36) {
+                } 
+                
+                // Period 3
+                else if (hour == 9 && minute >= 41 || hour == 10 && minute < 36) {
                     currentperiod = 3
                     pendhour = 10
-                    pendminute = 37
-                } else if (hour == 10 && minute >= 37 && hour == 10 && minute <= 46) {
+                    pendminute = 36
+                } 
+
+                // Period 4
+                else if (hour == 10 && minute >= 36 && hour == 10 && minute < 46) {
                     currentperiod = 4
                     pendhour = 10
-                    pendminute = 47
-                } else if (hour == 10 && minute >= 47 || hour == 11 && minute < 41) {
+                    pendminute = 46
+                } 
+                
+                // Period 5
+                else if (hour == 10 && minute >= 46 || hour == 11 && minute < 41) {
+                    currentperiod = 5
+                    pendhour = 11
+                    pendminute = 41
+                } else if (hour == 11 && minute >= 41 && minute < 44) {
+                    betweenperiods = true
                     currentperiod = 5
                     pendhour = 11
                     pendminute = 44
-                } else if (hour == 11 && minute >= 41 && minute < 44) {
-                    betweenperiods = true
-                    currentperiod = 6
-                    pendhour = 11
-                    pendminute = 44
-                } else if (hour == 11 && minute >= 44 || hour == 12 && minute <= 39) {
+                } 
+                
+                // Period 6
+                else if (hour == 11 && minute >= 44 || hour == 12 && minute < 39) {
                     currentperiod = 6
                     pendhour = 12
-                    pendminute = 40
-                } else if (hour == 12 && minute >= 40 || hour == 13 && minute <= 37) {
+                    pendminute = 39
+                } else if (hour == 12 && minute >= 39 && minute < 42) {
+                    betweenperiods = true
+                    currentperiod = 6
+                    pendhour = 12
+                    pendminute = 42
+                } 
+                
+                // Period 7
+                else if (hour == 12 && minute >= 42 || hour == 13 && minute < 37) {
                     currentperiod = 7
                     pendhour = 13
-                    pendminute = 38
-                } else if (hour == 13 && minute >= 38 || hour == 14 && minute <= 35) {
+                    pendminute = 37
+                } else if (hour == 13 && minute >= 37 && minute < 40) {
+                    betweenperiods = true
+                    currentperiod = 7
+                    pendhour = 13
+                    pendminute = 40
+                } 
+                
+                // Period 8
+                else if (hour == 13 && minute >= 40 || hour == 14 && minute < 35) {
                     currentperiod = 8
                     pendhour = 14
-                    pendminute = 36
-                } else if (hour == 14 && minute >= 36 || hour == 15 && minute <= 18) {
+                    pendminute = 35
+                } else if (hour == 14 && minute >= 35 && minute < 38) {
+                    betweenperiods = true
+                    currentperiod = 8
+                    pendhour = 14
+                    pendminute = 38
+                } 
+                
+                // Period 9
+                else if (hour == 14 && minute >= 38 || hour == 15 && minute <= 18) {
                     currentperiod = 9
                     pendhour = 15
                     pendminute = 18
-                } else {
+                } 
+                
+                else {
                     currentperiod = 0
                     pendhour = 0
                     pendminute = 0
@@ -263,8 +310,8 @@
                     styleElem.innerHTML = 'Transition Period'
                     styleElem.text = 'Transition Period'
                     styleElem.setAttribute('data-text', 'Transition Period')
-                    styleElem2.text = jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0] ]
-                    styleElem2.setAttribute('data-text', jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0]])
+                    styleElem2.text = jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0] + 1]
+                    styleElem2.setAttribute('data-text', jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0] + 1])
                 }
 
                 function updateClock() {
