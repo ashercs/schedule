@@ -186,7 +186,7 @@
                     pendminute = 43
                 } 
                 // Period 2
-                else if (hour == 8 && minute > 43 || hour == 9 && minute < 38) {
+                else if (hour == 8 && minute >= 43 || hour == 9 && minute < 38) {
                     currentperiod = 2
                     pendhour = 9
                     pendminute = 38
@@ -306,7 +306,7 @@
                     styleElem2.setAttribute('data-text', jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0] + 1])
                 }
                 if (checkperiod()[4] == true) {
-                    styleElem2.innerHTML = jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0]]
+                    styleElem2.innerHTML = jsonData['schedule'][0][day.toLowerCase()][0][checkperiod()[0] + 1]
                     styleElem.innerHTML = 'Transition Period'
                     styleElem.text = 'Transition Period'
                     styleElem.setAttribute('data-text', 'Transition Period')
