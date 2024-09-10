@@ -18,58 +18,58 @@ if (oddoreven == 0) {
   "schedule": [{
       "monday": [{
           "1": "Advisory-306", // 8:30
-          "2": "Study Hall-201", // 8:43
-          "3": "Global Studies-203", // 9:41
+          "2": "Computer Science-ML", // 8:43-9:38
+          "3": "Pre Calculus-307", // 9:41-10:36
           "4": "Break", // 10:36
-          "5": "Biology-207", // 10:46
-          "6": "Lunch", // 11:44
-          "7": "Spanish-302", // 12:42
-          "8": "English-216", //1:40
-          "9": "Clubs" // 2:38
+          "5": "Net Games-Gym", // 10:46-11:41
+          "6": "US History-303A", // 11:44-12:39
+          "7": "Lunch", // 12:42-1:37
+          "8": "Spanish-312", //1:40-2:35
+          "9": "Advisory" // 2:38
           // 3:18
       }],
       "tuesday": [{
           "1": "Advisory-306",
-          "2": "PE",
-          "3": "Algebra-308",
+          "2": "English-202",
+          "3": "Philosophy-216",
           "4": "Break",
-          "5": "Ceramics-101",
-          "6": "Lunch",
-          "7": "Study Hall-201",
-          "8": "Global Studies-203",
-          "9": "Advisory-306"
+          "5": "FREE",
+          "6": "Computer Science-ML",
+          "7": "Lunch",
+          "8": "Pre Calculus-307",
+          "9": "Learning Labs"
       }],
       "wednesday": [{
           "1": "Advisory-306",
-          "2": "Biology-207",
+          "2": "Health-306",
           "3": "Co-Curriculars",
           "4": "Break",
-          "5": "Spanish-302",
-          "6": "Lunch",
-          "7": "English-216",
-          "8": "Race & Identity-302",
+          "5": "US History-303A",
+          "6": "Spanish-312",
+          "7": "Lunch",
+          "8": "English-202",
           "9": "Silence"
       }],
       "thursday": [{
           "1": "Advisory-306",
-          "2": "Algebra-308",
-          "3": "Ceramics-101",
+          "2": "Philosophy-216",
+          "3": "FREE",
           "4": "Break",
-          "5": "Study Hall-201",
-          "6": "Lunch",
-          "7": "Global Studies-203",
-          "8": "Biology-207",
+          "5": "Computer Science-ML",
+          "6": "Pre Calculus-307",
+          "7": "Lunch",
+          "8": "Net Games-Gym",
           "9": "Confrencing"
       }],
       "friday": [{
           "1": "Advisory-306",
-          "2": "Spanish-302",
-          "3": "English-216",
+          "2": "US History-303A",
+          "3": "Spanish-312",
           "4": "Break",
-          "5": "Health-302",
-          "6": "Algebra-308",
+          "5": "English-202",
+          "6": "Philosophy-216",
           "7": "Lunch",
-          "8": "Ceramics-101",
+          "8": "FREE",
           "9": "Clubs"
       }]
   }]
@@ -81,57 +81,58 @@ if (oddoreven == 1) {
   "schedule": [{
       "monday": [{
           "1": "Advisory-306", // 8:30
-          "2": "Study Hall-201", // 8:43-9:38
-          "3": "Global Studies-203", // 9:41-10:36
+          "2": "Computer Science-ML", // 8:43-9:38
+          "3": "Pre Calculus-307", // 9:41-10:36
           "4": "Break", // 10:36
-          "5": "Biology-207", // 10:46-11:41
-          "6": "Lunch", // 11:44-12:39
-          "7": "Spanish-302", // 12:42-1:37
-          "8": "English-216", //1:40-2:35
-          "9": "Clubs" // 2:38-3:18
+          "5": "Health-306", // 10:46-11:41
+          "6": "US History-303A", // 11:44-12:39
+          "7": "Lunch", // 12:42-1:37
+          "8": "Spanish-312", //1:40-2:35
+          "9": "Advisory" // 2:38
+          // 3:18
       }],
       "tuesday": [{
           "1": "Advisory-306",
-          "2": "Learning Strategies-302",
-          "3": "Algebra-308",
+          "2": "English-202",
+          "3": "Philosophy-216",
           "4": "Break",
-          "5": "Ceramics-101",
-          "6": "Lunch",
-          "7": "Study Hall-201",
-          "8": "Global Studies-203",
-          "9": "Advisory-306"
+          "5": "FREE",
+          "6": "Computer Science-ML",
+          "7": "Lunch",
+          "8": "Pre Calculus-307",
+          "9": "Learning Labs"
       }],
       "wednesday": [{
           "1": "Advisory-306",
-          "2": "Biology-207",
+          "2": "Health-306",
           "3": "Co-Curriculars",
           "4": "Break",
-          "5": "Spanish-302",
-          "6": "Lunch",
-          "7": "English-216",
-          "8": "PE",
+          "5": "US History-303A",
+          "6": "Spanish-312",
+          "7": "Lunch",
+          "8": "English-202",
           "9": "Silence"
       }],
       "thursday": [{
           "1": "Advisory-306",
-          "2": "Algebra-308",
-          "3": "Ceramics-101",
+          "2": "Philosophy-216",
+          "3": "FREE",
           "4": "Break",
-          "5": "Study Hall-201",
-          "6": "Lunch",
-          "7": "Global Studies-203",
-          "8": "Biology-207",
+          "5": "Computer Science-ML",
+          "6": "Pre Calculus-307",
+          "7": "Lunch",
+          "8": "Health-306",
           "9": "Confrencing"
       }],
       "friday": [{
           "1": "Advisory-306",
-          "2": "Spanish-302",
-          "3": "English-216",
+          "2": "US History-303A",
+          "3": "Spanish-312",
           "4": "Break",
-          "5": "PE",
-          "6": "Algebra-308",
+          "5": "English-202",
+          "6": "Philosophy-216",
           "7": "Lunch",
-          "8": "Ceramics-101",
+          "8": "FREE",
           "9": "Clubs"
       }]
   }]
